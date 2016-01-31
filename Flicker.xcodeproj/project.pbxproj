@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BB3B7DB497D34862832094A /* Pods_Flicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8049595D9E37C2950AEEE6C4 /* Pods_Flicker.framework */; };
 		D1ADBAB91C3CA3BC002AAF04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ADBAB81C3CA3BC002AAF04 /* AppDelegate.swift */; };
 		D1ADBABE1C3CA3BC002AAF04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1ADBABC1C3CA3BC002AAF04 /* Main.storyboard */; };
 		D1ADBAC01C3CA3BC002AAF04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1ADBABF1C3CA3BC002AAF04 /* Assets.xcassets */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22BB028269CE908D252F9B3D /* Pods-Flicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flicker/Pods-Flicker.debug.xcconfig"; sourceTree = "<group>"; };
+		5E963E35DE1611F00AE8BE6B /* Pods-Flicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flicker/Pods-Flicker.release.xcconfig"; sourceTree = "<group>"; };
+		8049595D9E37C2950AEEE6C4 /* Pods_Flicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1ADBAB51C3CA3BC002AAF04 /* Flicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1ADBAB81C3CA3BC002AAF04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1ADBABD1C3CA3BC002AAF04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB3B7DB497D34862832094A /* Pods_Flicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		654352821D771E44DEFEBFC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8049595D9E37C2950AEEE6C4 /* Pods_Flicker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B377003BA60C3486916F971D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				22BB028269CE908D252F9B3D /* Pods-Flicker.debug.xcconfig */,
+				5E963E35DE1611F00AE8BE6B /* Pods-Flicker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D1ADBAAC1C3CA3BC002AAF04 = {
 			isa = PBXGroup;
 			children = (
 				D1ADBAB71C3CA3BC002AAF04 /* Flicker */,
 				D1ADBAB61C3CA3BC002AAF04 /* Products */,
+				B377003BA60C3486916F971D /* Pods */,
+				654352821D771E44DEFEBFC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,9 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1ADBAC71C3CA3BC002AAF04 /* Build configuration list for PBXNativeTarget "Flicker" */;
 			buildPhases = (
+				195FB71F30AD2F435C915C4A /* Check Pods Manifest.lock */,
 				D1ADBAB11C3CA3BC002AAF04 /* Sources */,
 				D1ADBAB21C3CA3BC002AAF04 /* Frameworks */,
 				D1ADBAB31C3CA3BC002AAF04 /* Resources */,
+				F95FF754FAB0F251D333D811 /* Embed Pods Frameworks */,
+				C405DE76765E72FE5DB81B9B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +176,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		195FB71F30AD2F435C915C4A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C405DE76765E72FE5DB81B9B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flicker/Pods-Flicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F95FF754FAB0F251D333D811 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flicker/Pods-Flicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D1ADBAB11C3CA3BC002AAF04 /* Sources */ = {
@@ -268,6 +343,7 @@
 		};
 		D1ADBAC81C3CA3BC002AAF04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22BB028269CE908D252F9B3D /* Pods-Flicker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Flicker/Info.plist;
@@ -279,6 +355,7 @@
 		};
 		D1ADBAC91C3CA3BC002AAF04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E963E35DE1611F00AE8BE6B /* Pods-Flicker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Flicker/Info.plist;
@@ -307,6 +384,7 @@
 				D1ADBAC91C3CA3BC002AAF04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
